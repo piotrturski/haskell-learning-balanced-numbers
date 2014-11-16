@@ -14,6 +14,6 @@ tests = TestList [
      9 --> 8361561,
      10 --> 10771919
  ]
-  where n --> value = TestCase $ assertEqual (printf "T(%d)" n) value (tm . Number_of_digits $ n)
+  where n --> value = TestCase $ assertEqual (printf "T(%d)" n) value (solution . Number_of_digits $ n)
 
 main = runTestTT tests
