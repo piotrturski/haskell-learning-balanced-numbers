@@ -1,8 +1,10 @@
-import Test.HUnit
+import Test.HUnit (assertEqual, (@?=))
 import Text.Printf
+import Test.Framework (defaultMain, testGroup)
+import Test.Framework.Providers.HUnit (testCase)
 import Solution
 
-tests = TestList [
+tests = [
      1 --> 45,
      2 --> 540,
      3 --> 50040,
@@ -14,6 +16,6 @@ tests = TestList [
      9 --> 8361561,
      10 --> 10771919
  ]
-  where n --> value = TestCase $ assertEqual (printf "T(%d)" n) value (solution . Number_of_digits $ n)
+  where n --> expected_result = testCase (printf "T(%d)" n) $ solution n @?= expected_result
 
-main = runTestTT tests
+main = defaultMain tests
