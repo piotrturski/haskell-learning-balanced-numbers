@@ -4,14 +4,17 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 library
+  hs-source-dirs: src
   exposed-modules: Solution
   build-depends:   base ==4.5.*, containers == 0.5.5.1
 
 test-suite balancedNumbers-test
+  hs-source-dirs: test
   type: exitcode-stdio-1.0
   main-is: Tests.hs
-  build-depends: base ==4.5.*, HUnit ==1.2.5.2, balancedNumbers ==0.1.0.0, containers == 0.5.5.1, test-framework==0.8.0.3, regex-posix==0.95.1, test-framework-hunit
+  build-depends: base ==4.5.*, HUnit ==1.2.5.2, balancedNumbers ==0.1.0.0, test-framework==0.8.0.3, regex-posix==0.95.1, test-framework-hunit
 		 
 executable balancedNumbers-exec
+  hs-source-dirs:     exec
   main-is:             Main.hs
-  build-depends:      base ==4.5.*,  balancedNumbers ==0.1.0.0, containers == 0.5.5.1
+  build-depends:      base ==4.5.*,  balancedNumbers ==0.1.0.0

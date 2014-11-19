@@ -1,6 +1,6 @@
 # Learning haskell: Balanced Numbers
 
-Haskell solution for [Project Euler's puzzle 217: Balanced Numbers](https://projecteuler.net/problem=217). With cabal, sandbox, repl, unit tests. Not optimised: ~4s to get result from interpreter without compilation.
+Cabal (libs, exec, tests), sanboxes, repl etc. Haskell solution for [Project Euler's puzzle 217: Balanced Numbers](https://projecteuler.net/problem=217) 
 
 #### Prepare sandbox
 ```
@@ -13,7 +13,7 @@ cabal configure
 cabal repl
 cabal build
 cabal run
-runhaskell Tests.hs
+cabal test
 ```
 #### Cleanup
 ```
@@ -27,7 +27,7 @@ cabal sandbox delete
 
 #### Known limitations
 * wrong number of tests reported on tests success
-* some problem with dependencies version. `--force-reinstalls` required
-* dependencies must be repeated for tests and executable
+* some problems with dependencies versions. `--force-reinstalls` required
 * can't play with test dependencies using sandbox and repl
-* test and production code doesn't use multiple threads 
+* test and production code doesn't use multiple threads
+* no optimizations: ~4s to get result from interpreter without compilation. 
